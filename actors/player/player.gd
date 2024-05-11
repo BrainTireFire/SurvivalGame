@@ -1,21 +1,31 @@
 extends CharacterBody3D
 
-@export var normal_speed : float = 3.0 
-@export var sprint_speed : float = 5.0
-@export var jump_velocity : float = 4.0
-@export var gravity : float = 0.2
-@export var mouse_sensitivity : float = 0.005
+@export var normal_speed := 3.0 
+@export var sprint_speed := 5.0
+@export var jump_velocity := 4.0
+@export var gravity := 0.2
+@export var mouse_sensitivity := 0.005
 
 @onready var head: Node3D = $Head
 @onready var interaction_ray_cast: RayCast3D = $Head/InteractionRayCast
 
+func _enter_tree() -> void:
+	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
+	EventSystem.PLA_unfreeze_player.connect(set_freeze.bind(false))
+
+func set_freeze(freeze: bool) -> void:
+	set_process(!freeze)
+	set_physics_process(!freeze)
+	set_process_input(!freeze)
+	set_process_unhandled_input(!freeze)
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	interaction_ray_cast.check_interaction()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move()
 
 func move() -> void:
@@ -52,3 +62,5 @@ func look_around(relative: Vector2) -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	elif event.is_action_pressed("open_crafting_menu"):
+		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.CraftingMenu)

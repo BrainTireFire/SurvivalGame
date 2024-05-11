@@ -70,9 +70,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ri160")
 
-[node name="Player" parent="." instance=ExtResource("4_d0xq4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89204, 0.712296, 13.4536)
-
 [node name="PickupableStone" parent="." instance=ExtResource("5_f1685")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15011, 0, 5.57539)
 
@@ -90,3 +87,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35073, 2.38419e-07, 5.2037
 
 [node name="PickupablePlant2" parent="." instance=ExtResource("7_ot7n7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89211, 2.38419e-07, 2.93225)
+
+[node name="Player" parent="." instance=ExtResource("4_d0xq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.605991, 0.587651, 6.47964)
