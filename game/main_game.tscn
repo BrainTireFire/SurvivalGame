@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://h1rxbsq0gsbt"]
+
+[ext_resource type="Script" path="res://actors/player/player.gd" id="1_600eo"]
+[ext_resource type="Script" path="res://game/managers/stage_controller.gd" id="2_ddo3a"]
+[ext_resource type="PackedScene" uid="uid://djaeo82fepvey" path="res://ui/hud/hud.tscn" id="9_cv4cr"]
+[ext_resource type="Script" path="res://game/managers/bulletin_controller.gd" id="10_dbs2l"]
+
+[node name="MainGame" type="Node"]
+script = ExtResource("1_600eo")
+
+[node name="StageController" type="Node" parent="."]
+script = ExtResource("2_ddo3a")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="HUDController" type="Node" parent="UILayer"]
+
+[node name="HUD" parent="UILayer/HUDController" instance=ExtResource("9_cv4cr")]
+
+[node name="BulletinController" type="Node" parent="UILayer"]
+script = ExtResource("10_dbs2l")
