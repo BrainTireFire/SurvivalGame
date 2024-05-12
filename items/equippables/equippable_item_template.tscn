@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm0g8ye6p7ok2"]
+
+[ext_resource type="Script" path="res://items/equippables/equippable_item.gd" id="1_1ttmn"]
+
+[node name="EquippableItemTemplate" type="Node3D"]
+script = ExtResource("1_1ttmn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="MeshHolder" type="Node3D" parent="."]

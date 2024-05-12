@@ -13,3 +13,8 @@ signal INV_delete_crafting_blueprint_costs
 
 signal PLA_freeze_player
 signal PLA_unfreeze_player
+
+signal EQU_hotkey_pressed
+signal EQU_equip_item
+signal EQU_unequip_item
+signal EQU_active_hotbar_slot_updated

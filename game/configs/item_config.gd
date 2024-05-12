@@ -48,6 +48,7 @@ const ITEM_RESOURCE_PATHS := {
 static func get_item_resource(item_key: Keys) -> ItemResource:
 	return load(ITEM_RESOURCE_PATHS.get(item_key))
 
+
 const CRAFTING_BLUEPRINT_RESOURCE_PATHS := {
 	Keys.Axe: "res://resources/crafting_blueprint_resources/axe_blueprint.tres",
 	Keys.Rope: "res://resources/crafting_blueprint_resources/rope_blueprint.tres"
@@ -56,6 +57,13 @@ const CRAFTING_BLUEPRINT_RESOURCE_PATHS := {
 static func get_crafting_blueprint_resource(item_key: Keys) -> CraftingBlueprintResource:
 	return load(CRAFTING_BLUEPRINT_RESOURCE_PATHS.get(item_key))
 
+
+const EQUIPPABLE_ITEM_PATHS := {
+	Keys.Axe: "res://items/equippables/equippable_axe.tscn",
+}
+
+static func get_equippable_item(item_key: Keys) -> PackedScene:
+	return load(EQUIPPABLE_ITEM_PATHS.get(item_key))
 
 
 
