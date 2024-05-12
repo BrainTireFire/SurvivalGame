@@ -1,10 +1,12 @@
 extends Bulletin
+class_name PlayerMenuBase
 
 @onready var inventory_container: GridContainer = %InventoryContainer
 @onready var item_description_label: Label = %ItemDescriptionLabel
+@onready var item_extra_info_label: Label = %ItemExtraInfoLabel
 
 func _enter_tree() -> void:
-	EventSystem.INV_inventory_updated.connect(update_inventory_slots)
+	EventSystem.INV_inventory_updated.connect(update_inventory)
 
 func _ready() -> void:
 	EventSystem.PLA_freeze_player.emit()
@@ -14,6 +16,10 @@ func _ready() -> void:
 	for inventory_slot in inventory_container.get_children():
 		inventory_slot.mouse_entered.connect(show_item_info.bind(inventory_slot))
 		inventory_slot.mouse_exited.connect(hide_item_info)
+	
+	for hotbar_slot in get_tree().get_nodes_in_group("HotbarSlots"):
+		hotbar_slot.mouse_entered.connect(show_item_info.bind(hotbar_slot))
+		hotbar_slot.mouse_exited.connect(hide_item_info)
 
 func close() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -36,6 +42,6 @@ func hide_item_info() -> void:
 	
 	item_description_label.text = ""
 
-func update_inventory_slots(inventory: Array) -> void:
+func update_inventory(inventory: Array) -> void:
 	for i in inventory.size():
 		inventory_container.get_child(i).set_item_key(inventory[i])
