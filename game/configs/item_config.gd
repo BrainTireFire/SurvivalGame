@@ -46,7 +46,7 @@ const ITEM_RESOURCE_PATHS := {
 }
 
 static func get_item_resource(item_key: Keys) -> ItemResource:
-	return load(ITEM_RESOURCE_PATHS.get(item_key))
+		return load(ITEM_RESOURCE_PATHS.get(item_key))
 
 
 const CRAFTING_BLUEPRINT_RESOURCE_PATHS := {
@@ -66,6 +66,12 @@ static func get_equippable_item(item_key: Keys) -> PackedScene:
 	return load(EQUIPPABLE_ITEM_PATHS.get(item_key))
 
 
+const PICKUPABLE_ITEM_PATHS := {
+	Keys.Log: "res://items/interactables/rigid_pickupable_log.tscn",
+}
+
+static func get_pickupable_item(item_key: Keys) -> PackedScene:
+	return load(PICKUPABLE_ITEM_PATHS.get(item_key))
 
 
 
