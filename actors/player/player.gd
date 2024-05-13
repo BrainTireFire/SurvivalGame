@@ -3,12 +3,13 @@ extends CharacterBody3D
 @export var normal_speed := 3.0 
 @export var sprint_speed := 5.0
 @export var jump_velocity := 4.0
+@export var jump_velocity_sprint := 5.0
 @export var gravity := 0.2
 @export var mouse_sensitivity := 0.005
 
 @onready var head: Node3D = $Head
 @onready var interaction_ray_cast: RayCast3D = $Head/InteractionRayCast
-@onready var equippable_item_holder: Node3D = $Head/EquippableItemHolder
+@onready var equippable_item_holder: Node3D = %EquippableItemHolder
 
 func _enter_tree() -> void:
 	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
@@ -38,7 +39,9 @@ func move() -> void:
 	if is_on_floor():
 		is_sprinting = Input.is_action_pressed("sprint")
 		
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("jump") and is_sprinting:
+			velocity.y = jump_velocity_sprint
+		elif Input.is_action_just_pressed("jump"):
 			velocity.y = jump_velocity
 	else:
 		velocity.y -= gravity
