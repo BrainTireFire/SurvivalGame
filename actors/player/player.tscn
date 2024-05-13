@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cv6786h31wyr6"]
+[gd_scene load_steps=9 format=3 uid="uid://cv6786h31wyr6"]
 
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_8bsx0"]
 [ext_resource type="Script" path="res://actors/player/main_camera.gd" id="2_gp32t"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://game/managers/inventory_manager.gd" id="3_7qtdm"]
 [ext_resource type="Script" path="res://actors/player/equippable_item_holder.gd" id="3_qd0m5"]
 [ext_resource type="Script" path="res://game/managers/equipped_item_manager.gd" id="4_xnfav"]
+[ext_resource type="Script" path="res://game/managers/player_stats_manager.gd" id="7_gf2o3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwru6"]
 radius = 0.25
@@ -62,3 +63,6 @@ script = ExtResource("3_7qtdm")
 
 [node name="EquippedItemManager" type="Node" parent="Managers"]
 script = ExtResource("4_xnfav")
+
+[node name="PlayerStatsManager" type="Node" parent="Managers"]
+script = ExtResource("7_gf2o3")
