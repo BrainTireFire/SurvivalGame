@@ -4357,7 +4357,8 @@ _data = {
 }
 
 [node name="Cow" instance=ExtResource("1_rr6lg")]
-idle_animation = Array[String](["Idle", "Idle_2", "Idle_Headlow", "Eating"])
+idle_animations = Array[String](["Eating", "Idle", "Idle_2", "Idle_Headlow"])
+hurt_animations = Array[String](["Idle_HitReact1", "Idle_HitReact2"])
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00293064, 0.351581, 0.016134)
@@ -4366,6 +4367,8 @@ shape = SubResource("CapsuleShape3D_kwh8e")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" index="0"]
 transform = Transform3D(1, 0, 0, 0, -0.0615364, -0.998105, 0, 0.998105, -0.0615364, 0, 0.993852, -0.246797)
 shape = SubResource("CapsuleShape3D_weybp")
+
+[node name="FleeTimer" type="Timer" parent="Timers" index="3"]
 
 [node name="MeatSpawnMarker" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.727733, 0)
@@ -4680,3 +4683,5 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_kspa0")
 }
+
+[connection signal="timeout" from="Timers/FleeTimer" to="." method="_on_flee_timer_timeout"]
