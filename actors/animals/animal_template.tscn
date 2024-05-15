@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cobt1dvtwt5nb"]
+
+[ext_resource type="Script" path="res://actors/animals/animal.gd" id="1_88ibx"]
+[ext_resource type="PackedScene" uid="uid://fnnmltpc8mrx" path="res://objects/hitbox/hitbox.tscn" id="1_db6hr"]
+
+[node name="Animal" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 67
+script = ExtResource("1_88ibx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource("1_db6hr")]
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="IdleTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+one_shot = true
+autostart = true
+
+[node name="WanderTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="DisappearAfterDeathTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="MeatSpawnMarker" type="Marker3D" parent="."]
+
+[connection signal="register_hit" from="Hitbox" to="." method="take_hit"]
+[connection signal="timeout" from="Timers/IdleTimer" to="." method="_on_idle_timer_timeout"]
+[connection signal="timeout" from="Timers/WanderTimer" to="." method="_on_wander_timer_timeout"]
+[connection signal="timeout" from="Timers/DisappearAfterDeathTimer" to="." method="_on_disappear_after_death_timer_timeout"]

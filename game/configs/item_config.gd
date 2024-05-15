@@ -48,6 +48,7 @@ const ITEM_RESOURCE_PATHS := {
 	Keys.Mushroom: "res://resources/item_resources/mushroom_item_resource.tres",
 	Keys.Coal: "res://resources/item_resources/coal_item_resource.tres",
 	Keys.Flintstone: "res://resources/item_resources/flintstone_item_resource.tres",
+	Keys.RawMeat: "res://resources/item_resources/raw_meat_item_resource.tres",
 	
 }
 
@@ -81,6 +82,7 @@ const PICKUPABLE_ITEM_PATHS := {
 	Keys.Log: "res://items/interactables/rigid_pickupable_log.tscn",
 	Keys.Coal: "res://items/interactables/rigid_pickupable_coal.tscn",
 	Keys.Flintstone: "res://items/interactables/rigid_pickupable_flintstone.tscn",
+	Keys.RawMeat: "res://items/interactables/rigid_pickupable_raw_meat.tscn",
 	
 }
 
