@@ -41,14 +41,19 @@ const ITEM_RESOURCE_PATHS := {
 	Keys.Stick : "res://resources/item_resources/stick_item_resource.tres",
 	Keys.Stone : "res://resources/item_resources/stone_item_resource.tres",
 	Keys.Plant : "res://resources/item_resources/plant_item_resource.tres",
+	Keys.Mushroom: "res://resources/item_resources/mushroom_item_resource.tres",
+	
 	Keys.Axe: "res://resources/item_resources/axe_item_resource.tres",
 	Keys.Pickaxe: "res://resources/item_resources/pickaxe_item_resource.tres",
 	Keys.Rope: "res://resources/item_resources/rope_item_resource.tres",
+	
 	Keys.Log: "res://resources/item_resources/log_item_resource.tres",
-	Keys.Mushroom: "res://resources/item_resources/mushroom_item_resource.tres",
 	Keys.Coal: "res://resources/item_resources/coal_item_resource.tres",
 	Keys.Flintstone: "res://resources/item_resources/flintstone_item_resource.tres",
 	Keys.RawMeat: "res://resources/item_resources/raw_meat_item_resource.tres",
+	
+	Keys.Tent: "res://resources/item_resources/tent_item_resource.tres",
+	Keys.Campfire: "res://resources/item_resources/campfire_item_resource.tres",
 	
 }
 
@@ -71,6 +76,8 @@ const EQUIPPABLE_ITEM_PATHS := {
 	Keys.Axe: "res://items/equippables/equippable_axe.tscn",
 	Keys.Mushroom: "res://items/equippables/equippable_mushroom.tscn",
 	Keys.Pickaxe: "res://items/equippables/equippable_pickaxe.tscn",
+	Keys.Tent: "res://items/equippables/equippable_tent.tscn",
+	Keys.Campfire: "res://items/equippables/equippable_campfire.tscn",
 	
 }
 
@@ -89,5 +96,14 @@ const PICKUPABLE_ITEM_PATHS := {
 static func get_pickupable_item(item_key: Keys) -> PackedScene:
 	return load(PICKUPABLE_ITEM_PATHS.get(item_key))
 
+
+const CONSTRUCTABLE_SCENES := {
+	Keys.Tent: "res://objects/constructables/constructable_tent.tscn",
+	Keys.Campfire: "res://objects/constructables/constructable_campfire.tscn",
+	
+}
+
+static func get_constructable_scene(item_key: Keys) -> PackedScene:
+	return load(CONSTRUCTABLE_SCENES.get(item_key))
 
 

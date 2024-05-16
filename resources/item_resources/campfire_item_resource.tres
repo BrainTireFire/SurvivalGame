@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cslxjfnrye2ic"]
+
+[ext_resource type="Texture2D" uid="uid://dmv7metq32pj4" path="res://assets/textures/item_icons/campfire.png" id="1_7o51m"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_y7yw6"]
+
+[resource]
+script = ExtResource("2_y7yw6")
+item_key = 12
+display_name = "Campfire"
+icon = ExtResource("1_7o51m")
+description = "A warm campfire."
+is_equippable = true
