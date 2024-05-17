@@ -51,6 +51,7 @@ const ITEM_RESOURCE_PATHS := {
 	Keys.Coal: "res://resources/item_resources/coal_item_resource.tres",
 	Keys.Flintstone: "res://resources/item_resources/flintstone_item_resource.tres",
 	Keys.RawMeat: "res://resources/item_resources/raw_meat_item_resource.tres",
+	Keys.CookedMeat: "res://resources/item_resources/cooked_meat_item_resource.tres",
 	
 	Keys.Tent: "res://resources/item_resources/tent_item_resource.tres",
 	Keys.Campfire: "res://resources/item_resources/campfire_item_resource.tres",
