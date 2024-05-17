@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4hpu7o5bd5a6"]
+
+[ext_resource type="PackedScene" uid="uid://bgdyxjdhfqerv" path="res://items/interactables/pickupable_template.tscn" id="1_ip66k"]
+[ext_resource type="PackedScene" uid="uid://cox2s1x7rteiw" path="res://assets/meshes/fruit.tscn" id="2_xl3qb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p164d"]
+radius = 0.0772974
+height = 0.214596
+
+[node name="PickupableStone" instance=ExtResource("1_ip66k")]
+
+[node name="Pickupable" parent="." index="0"]
+item_key = 4
+prompt = "Pickup fruit"
+
+[node name="CollisionShape3D" parent="Pickupable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00329705, 0)
+shape = SubResource("CapsuleShape3D_p164d")
+
+[node name="Fruit" parent="." index="1" instance=ExtResource("2_xl3qb")]

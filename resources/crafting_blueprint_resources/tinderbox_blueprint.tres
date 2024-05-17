@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CraftingBlueprintResource" load_steps=7 format=3 uid="uid://gvj3j18dmbvf"]
+
+[ext_resource type="Script" path="res://resources/crafting_blueprint_resources/blueprint_cost_data.gd" id="1_vim8g"]
+[ext_resource type="Script" path="res://resources/crafting_blueprint_resources/crafting_blueprint_resource.gd" id="2_45h6b"]
+
+[sub_resource type="Resource" id="Resource_44u44"]
+script = ExtResource("1_vim8g")
+item_key = 0
+amount = 1
+
+[sub_resource type="Resource" id="Resource_1rpcb"]
+script = ExtResource("1_vim8g")
+item_key = 1
+amount = 1
+
+[sub_resource type="Resource" id="Resource_okgvm"]
+script = ExtResource("1_vim8g")
+item_key = 7
+amount = 1
+
+[sub_resource type="Resource" id="Resource_hu65j"]
+script = ExtResource("1_vim8g")
+item_key = 6
+amount = 1
+
+[resource]
+script = ExtResource("2_45h6b")
+item_key = 15
+costs = Array[ExtResource("1_vim8g")]([SubResource("Resource_44u44"), SubResource("Resource_1rpcb"), SubResource("Resource_okgvm"), SubResource("Resource_hu65j")])
+needs_multitool = true
+needs_tinderbox = false

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://2dpkdv203l6p"]
+
+[ext_resource type="Texture2D" uid="uid://b2geqtek2w5af" path="res://assets/textures/item_icons/fruit.png" id="1_2mjh6"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_8gnom"]
+
+[resource]
+script = ExtResource("2_8gnom")
+item_key = 4
+display_name = "Fruit"
+icon = ExtResource("1_2mjh6")
+description = "A deliciose fruit."
+is_equippable = true

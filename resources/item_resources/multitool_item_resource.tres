@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://d05p6tkipyf5o"]
+
+[ext_resource type="Texture2D" uid="uid://cudlpanx8jfri" path="res://assets/textures/item_icons/multitool.png" id="1_xg07c"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_t3glo"]
+
+[resource]
+script = ExtResource("2_t3glo")
+item_key = 13
+display_name = "Multitool"
+icon = ExtResource("1_xg07c")
+description = "A multitool."
+is_equippable = false

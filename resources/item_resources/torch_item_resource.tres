@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponItemResource" load_steps=3 format=3 uid="uid://dgc8tbrsiyxp5"]
+
+[ext_resource type="Texture2D" uid="uid://bitg7fdijyqo8" path="res://assets/textures/item_icons/torch.png" id="1_v25wb"]
+[ext_resource type="Script" path="res://resources/item_resources/weapon_item_resource.gd" id="2_24w0b"]
+
+[resource]
+script = ExtResource("2_24w0b")
+damage = 20.0
+range = 1.5
+energy_change_per_use = -0.5
+item_key = 16
+display_name = "Torch"
+icon = ExtResource("1_v25wb")
+description = "A DIY troch."
+is_equippable = true

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dti5a76kwh3ll"]
+
+[ext_resource type="Texture2D" uid="uid://cnl7vgu25ke2g" path="res://assets/textures/item_icons/tinderbox.png" id="1_wxmgu"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_vayi0"]
+
+[resource]
+script = ExtResource("2_vayi0")
+item_key = 15
+display_name = "Tinderbox"
+icon = ExtResource("1_wxmgu")
+description = "A tinderbox."
+is_equippable = false
